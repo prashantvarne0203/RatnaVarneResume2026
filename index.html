@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratna Varne — Accounting & Finance Professional</title>
+<meta name="description" content="Ratna Varne — Accounting & Finance Professional. 12+ years across India and Sweden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10162B;
+  --navy:#182142;
+  --navy-soft:#26325c;
+  --gold:#c79a3e;
+  --gold-light:#e8c77a;
+  --paper:#fbf7ec;
+  --paper-line:#e3d8bb;
+  --card:#ffffff;
+  --slate:#5b6178;
+  --credit:#4c7a5c;
+  --display:'Fraunces', serif;
+  --body:'Inter', system-ui, sans-serif;
+  --mono:'JetBrains Mono', monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--body);
+  line-height:1.55;
+}
+::selection{ background:var(--gold-light); color:var(--ink); }
+a{ color:inherit; }
+
+.wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+
+/* ---------------- Letterhead / Hero ---------------- */
+.letterhead{
+  background: linear-gradient(160deg, var(--navy) 0%, var(--ink) 100%);
+  color:#f2ede0; padding:56px 0 40px; position:relative;
+}
+.letterhead::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:4px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 14px, transparent 14px 22px);
+}
+.letterhead-inner{ display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; }
+.id-block{ display:flex; gap:22px; align-items:center; max-width:640px; }
+.avatar{
+  width:84px; height:84px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 30% 25%, var(--gold-light), var(--gold) 65%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); font-weight:700; font-size:28px; color:var(--ink);
+  border:2px solid var(--gold-light);
+}
+.name-block .eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--gold-light); margin-bottom:6px;
+}
+.name-block h1{ font-family:var(--display); font-weight:700; font-size:38px; margin:0 0 10px; line-height:1.05; }
+.name-block p{ margin:0; color:#c9c3ae; font-size:14.5px; max-width:520px; }
+
+.letterhead-meta{ text-align:right; font-family:var(--mono); font-size:12.5px; color:#c9c3ae; display:flex; flex-direction:column; gap:6px; min-width:220px; }
+.permit-tag{
+  margin-top:6px; align-self:flex-end; display:inline-flex; align-items:center; gap:6px;
+  background:rgba(199,154,62,0.16); border:1px solid var(--gold); color:var(--gold-light);
+  padding:5px 10px; border-radius:3px; font-size:11px;
+}
+
+.lang-row{ display:flex; gap:8px; margin-top:18px; flex-wrap:wrap; }
+.lang-chip{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.4px; color:#e8e2cf;
+  border:1px solid rgba(232,199,122,0.4); padding:5px 10px; border-radius:20px;
+}
+
+/* ---------------- Trial balance stat strip ---------------- */
+.strip{ background:var(--gold); }
+.strip-inner{
+  display:flex; flex-wrap:wrap;
+}
+.stat{
+  flex:1; min-width:140px; padding:20px 18px; text-align:center;
+  border-right:1px solid rgba(16,22,43,0.15);
+}
+.stat:last-child{ border-right:none; }
+.stat .num{
+  font-family:var(--mono); font-weight:700; font-size:24px; color:var(--ink);
+  display:inline-block; border-bottom:3px double var(--ink); padding-bottom:3px;
+}
+.stat .lbl{ display:block; margin-top:8px; font-size:10.5px; letter-spacing:1px; text-transform:uppercase; color:#3a3218; font-family:var(--mono); }
+
+/* ---------------- Tools ledger line ---------------- */
+.tools{ background:var(--ink); padding:14px 0; overflow:hidden; }
+.tools-track{
+  font-family:var(--mono); font-size:12.5px; color:#8d93ab; white-space:nowrap;
+  display:flex; gap:28px;
+}
+.tools-track span{ flex-shrink:0; }
+.tools-track b{ color:var(--gold-light); font-weight:600; }
+
+/* ---------------- Main layout ---------------- */
+main{ padding:56px 0 30px; }
+.grid{ display:grid; grid-template-columns: 1.55fr 1fr; gap:52px; }
+@media(max-width:860px){ .grid{ grid-template-columns:1fr; } }
+
+.section-label{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--gold); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+}
+.section-label::after{ content:''; flex:1; height:1px; background:var(--paper-line); }
+
+/* ---- Journey ledger ---- */
+.journal-entry{
+  display:grid; grid-template-columns:120px 1px 1fr; gap:20px; padding:20px 0;
+  border-bottom:1px solid var(--paper-line);
+}
+.journal-entry:first-child{ padding-top:0; }
+.journal-entry:last-child{ border-bottom:none; }
+.je-date{ font-family:var(--mono); font-size:11.5px; color:var(--slate); line-height:1.5; padding-top:2px; }
+.je-rule{ background:var(--paper-line); }
+.je-body h3{ font-family:var(--display); font-size:18px; margin:0 0 3px; font-weight:600; }
+.je-body .co{ font-size:13px; color:var(--gold); font-weight:600; margin-bottom:8px; }
+.je-body .desc{ font-size:13.5px; color:var(--slate); margin:0; }
+
+/* ---- Achievements (footed totals) ---- */
+.totals-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px; }
+@media(max-width:520px){ .totals-grid{ grid-template-columns:1fr; } }
+.total-card{
+  background:var(--card); border:1px solid var(--paper-line); border-radius:6px; padding:20px;
+}
+.total-card .figure{
+  font-family:var(--mono); font-weight:700; font-size:26px; color:var(--credit);
+  display:inline-block; border-bottom:3px double var(--credit); padding-bottom:3px; margin-bottom:10px;
+}
+.total-card p{ margin:0; font-size:12.5px; color:var(--slate); }
+
+/* ---- Sidebar cards ---- */
+.side-card{ margin-bottom:34px; }
+.competency-list{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.competency-list li{
+  font-size:13.5px; padding-left:22px; position:relative; color:var(--ink);
+}
+.competency-list li::before{
+  content:'✓'; position:absolute; left:0; top:0; color:var(--credit); font-weight:700; font-family:var(--mono); font-size:12px;
+}
+
+.drives-item{ margin-bottom:16px; padding-left:16px; border-left:2px solid var(--gold); }
+.drives-item h4{ font-family:var(--display); font-size:14.5px; margin:0 0 4px; font-weight:600; }
+.drives-item p{ margin:0; font-size:12.5px; color:var(--slate); }
+
+.edu-item{ margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--paper-line); }
+.edu-item:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.edu-item .deg{ font-weight:600; font-size:13.5px; }
+.edu-item .school{ font-size:12px; color:var(--slate); }
+
+.tag-cloud{ display:flex; flex-wrap:wrap; gap:8px; }
+.tag-cloud span{
+  font-family:var(--mono); font-size:11px; background:var(--card); border:1px solid var(--paper-line);
+  padding:6px 10px; border-radius:20px; color:var(--navy-soft);
+}
+
+/* ---- Closing letter ---- */
+.closing{
+  background:var(--navy); color:#e8e2cf; padding:42px 0; margin-top:20px;
+}
+.closing blockquote{
+  margin:0; font-family:var(--display); font-size:17px; line-height:1.6; font-weight:500; font-style:italic;
+  max-width:760px;
+}
+.closing .sign{ margin-top:16px; font-family:var(--mono); font-size:12.5px; color:var(--gold-light); }
+
+footer{ text-align:center; padding:22px; font-family:var(--mono); font-size:11px; color:var(--slate); }
+
+@keyframes riseIn{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:none;} }
+.reveal{ animation:riseIn .5s ease both; }
+</style>
+</head>
+<body>
+
+<header class="letterhead">
+  <div class="wrap letterhead-inner">
+    <div class="id-block">
+      <div class="avatar">RV</div>
+      <div class="name-block">
+        <div class="eyebrow">Accounting &amp; Finance Professional</div>
+        <h1>Ratna Varne</h1>
+        <p>Detail-oriented finance professional with 12+ years across accounts payable, receivable, and end-to-end invoice management — spanning budgeting, reporting, payroll, and cash-flow control under IFRS &amp; GAAP standards.</p>
+        <div class="lang-row">
+          <span class="lang-chip">EN — Fluent</span>
+          <span class="lang-chip">SV — C2</span>
+          <span class="lang-chip">MR / HI — Native</span>
+        </div>
+      </div>
+    </div>
+    <div class="letterhead-meta">
+      <span>Västerås, Sweden</span>
+      <span>+46 769 738 010</span>
+      <span>ratnavarne22@gmail.com</span>
+      <span>linkedin.com/in/ratna-varne</span>
+      <span class="permit-tag">✓ Valid Swedish Work Permit</span>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap strip-inner">
+    <div class="stat"><span class="num">12+</span><span class="lbl">Years Exp.</span></div>
+    <div class="stat"><span class="num">6</span><span class="lbl">Companies</span></div>
+    <div class="stat"><span class="num">180+</span><span class="lbl">Payroll Mgd.</span></div>
+    <div class="stat"><span class="num">6M+</span><span class="lbl">SEK Acc. Recv.</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Audit Objections</span></div>
+    <div class="stat"><span class="num">MSc</span><span class="lbl">Business Admin</span></div>
+  </div>
+</div>
+
+<div class="tools">
+  <div class="tools-track" id="toolsTrack"></div>
+</div>
+
+<main class="wrap">
+  <div class="grid">
+    <div>
+      <section>
+        <div class="section-label">My Journey</div>
+
+        <div class="journal-entry">
+          <div class="je-date">MAR 2024 —<br>DEC 2024</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Finance Analyst</h3>
+            <div class="co">Alstom · Västerås, Sweden</div>
+            <p class="desc">Budgeting &amp; forecasting for rail projects · Finance analysis &amp; control · AR management · Root-cause analysis · Aged receivables recovery · Cash flow management.</p>
+          </div>
+        </div>
+
+        <div class="journal-entry">
+          <div class="je-date">DEC 2022 —<br>JUN 2023</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Deputy Financial Controller</h3>
+            <div class="co">ILYA Pharma · Uppsala, Sweden</div>
+            <p class="desc">K3 financial closings · Skatteverket compliance · Payroll for 60+ employees · Overdue payment recovery.</p>
+          </div>
+        </div>
+
+        <div class="journal-entry">
+          <div class="je-date">AUG 2019 —<br>SEP 2021</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Administration Associate</h3>
+            <div class="co">CA Firm Manoj Pise &amp; Associates · Kolhapur, India</div>
+            <p class="desc">Tax returns for 15+ clients with zero audit objections · Payroll, TDS &amp; ESIC filings.</p>
+          </div>
+        </div>
+
+        <div class="journal-entry">
+          <div class="je-date">JUN 2013 —<br>MAR 2015</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Finance Associate — Project Control</h3>
+            <div class="co">AgreeYa Mobility · Pune, India</div>
+            <p class="desc">Full AP/AR cycle · Vendor billing · Budget alignment with organizational goals.</p>
+          </div>
+        </div>
+
+        <div class="journal-entry">
+          <div class="je-date">DEC 2009 —<br>JUN 2013</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Accounts &amp; Admin Executive</h3>
+            <div class="co">Fast Track Software Services · Pune, India</div>
+            <p class="desc">Full-cycle payroll for 120+ employees · General ledger · Bank reconciliations.</p>
+          </div>
+        </div>
+
+        <div class="journal-entry">
+          <div class="je-date">OCT 2004 —<br>NOV 2009</div>
+          <div class="je-rule"></div>
+          <div class="je-body">
+            <h3>Accounts &amp; HR Roles</h3>
+            <div class="co">AQSR India · Abhinav Group · Pune, India</div>
+            <p class="desc">Full-cycle accounting · ISO 9001 audit coordination · Tax filing &amp; statutory compliance.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label" style="margin-top:44px">Key Achievements</div>
+        <div class="totals-grid">
+          <div class="total-card">
+            <div class="figure">0</div>
+            <p>Audit objections across 12 years — every closing, filing, and reconciliation delivered clean.</p>
+          </div>
+          <div class="total-card">
+            <div class="figure">6M SEK+</div>
+            <p>Overseas accounts receivable secured and recovered at Alstom.</p>
+          </div>
+          <div class="total-card">
+            <div class="figure">6</div>
+            <p>Companies across India &amp; Sweden that trusted her with closings, compliance, and recovery work.</p>
+          </div>
+          <div class="total-card">
+            <div class="figure">180+</div>
+            <p>Employee payroll cycles managed end-to-end at Fast Track Software Services &amp; ILYA Pharma.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="side-card">
+        <div class="section-label">Core Competencies</div>
+        <ul class="competency-list">
+          <li>Accounts Payable &amp; Receivable</li>
+          <li>Invoice Lifecycle Management</li>
+          <li>Budgeting &amp; Forecasting</li>
+          <li>Cash Flow Optimization</li>
+          <li>Financial Reporting &amp; Control</li>
+          <li>Cost &amp; Fixed Asset Accounting</li>
+          <li>Payroll Management</li>
+          <li>Audit Coordination</li>
+          <li>Tax Filing &amp; Reconciliation</li>
+          <li>Stakeholder Collaboration</li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <div class="section-label">What Drives Me</div>
+        <div class="drives-item">
+          <h4>Precision &amp; Compliance</h4>
+          <p>Financial accuracy is the foundation of business trust — zero-error reporting and clean audits every time.</p>
+        </div>
+        <div class="drives-item">
+          <h4>Cross-Cultural Collaboration</h4>
+          <p>Having worked across India and Sweden, I thrive in multicultural environments, bridging finance with communication.</p>
+        </div>
+        <div class="drives-item">
+          <h4>Continuous Improvement</h4>
+          <p>Proactively identifying inefficiencies and implementing solutions that reduce turnaround times.</p>
+        </div>
+        <div class="drives-item">
+          <h4>Lifelong Learning</h4>
+          <p>Pursuing Swedish fluency and mastering new ERP systems reflects my commitment to growing in a new country.</p>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="section-label">Education</div>
+        <div class="edu-item">
+          <div class="deg">Master's in Business Administration</div>
+          <div class="school">Pune University, India</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">Bachelor's in Business Administration</div>
+          <div class="school">Pune University, India</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">Swedish UHR Assessment</div>
+          <div class="school">SeQF Level 7, Sweden</div>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="section-label">Industries &amp; Sectors</div>
+        <div class="tag-cloud">
+          <span>Rail &amp; Transport</span>
+          <span>Pharma &amp; Life Sciences</span>
+          <span>Professional Services</span>
+          <span>IT &amp; Software</span>
+          <span>Certification</span>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <div class="section-label">Beyond Work</div>
+        <div class="tag-cloud">
+          <span>Literature &amp; Reading</span>
+          <span>Yoga &amp; Fitness</span>
+          <span>Travel &amp; Cultures</span>
+          <span>Cooking</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="closing">
+  <div class="wrap">
+    <blockquote>"I am excited to bring my 12 years of international accounting &amp; finance experience to a team where precision, compliance, and cross-cultural collaboration create real impact. Also ready to learn alongside you and build the future together."</blockquote>
+    <div class="sign">— Ratna Varne</div>
+  </div>
+</div>
+
+<footer>Västerås, Sweden · ratnavarne22@gmail.com · +46 769 738 010</footer>
+
+<script>
+  const tools = ["SAP","Fortnox","QuickBooks","Tally 9.0","Power BI","Advanced Excel","IFRS & GAAP","K3 Standards","VAT / Skatteverket","ISO 9001","Grant Thornton","Baan ERP"];
+  const track = document.getElementById('toolsTrack');
+  const seq = tools.map(t => `<span><b>${t}</b></span>`).join('<span style="color:#3a3f57">•</span>');
+  track.innerHTML = seq + '<span style="color:#3a3f57">•</span>' + seq;
+
+  // gentle reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('reveal'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.journal-entry, .total-card, .side-card').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
